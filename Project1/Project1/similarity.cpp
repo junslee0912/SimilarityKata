@@ -4,7 +4,7 @@
 class Similarity
 {
 public:
-    int getSimilarityLength(std::string str1, std::string str2)
+    int getSimilarityLength(const std::string& str1, const std::string& str2)
     {
         assertIllegalArgument(str1, str2);
 
@@ -18,27 +18,33 @@ public:
         return static_cast<int>(score);
     }
 
+private:
     void assertIllegalArgument(const std::string& str1, const std::string& str2)
     {
         if (str1.size() == 0 || str2.size() == 0)
         {
             throw std::invalid_argument("Need more than one letters.");
         }
-        
-        for (char ch : str1) 
+
+        for (char ch : str1)
         {
-            if (!((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))) 
+            if (!(IsAlphatbet(ch)))
             {
                 throw std::invalid_argument("Need Only Alphabets");
             }
         }
 
-        for (char ch : str2) 
+        for (char ch : str2)
         {
-            if (!((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))) 
+            if (!(IsAlphatbet(ch)))
             {
                 throw std::invalid_argument("Need Only Alphabets");
             }
         }
+    }
+
+    bool IsAlphatbet(char ch)
+    {
+        return ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'));
     }
 };
