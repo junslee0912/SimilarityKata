@@ -4,6 +4,8 @@
 class Similarity
 {
 public:
+    static constexpr int MAX_SCORE = 60;
+    static constexpr int MIN_SCORE = 0;
     int getSimilarityLength(const std::string& str1, const std::string& str2)
     {
         assertIllegalArgument(str1, str2);

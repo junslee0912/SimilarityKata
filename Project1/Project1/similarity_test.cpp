@@ -35,8 +35,8 @@ TEST_F(SimilarityTestFixture, getSimilarityLengthWithoutAlphabet)
 
 TEST_F(SimilarityTestFixture, getSimilarityLength)
 {
-	EXPECT_EQ(similarity.getSimilarityLength("ASD", "DSA"), 60);
-	EXPECT_EQ(similarity.getSimilarityLength("A", "BB"), 0);
+	EXPECT_EQ(similarity.getSimilarityLength("ASD", "DSA"), Similarity::MAX_SCORE);
+	EXPECT_EQ(similarity.getSimilarityLength("A", "BB"), Similarity::MIN_SCORE);
 	EXPECT_EQ(similarity.getSimilarityLength("AAABB", "BAA"), 20);
 	EXPECT_EQ(similarity.getSimilarityLength("AA", "AAE"), 30);
 }
