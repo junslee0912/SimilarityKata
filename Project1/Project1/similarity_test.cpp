@@ -19,11 +19,18 @@ public:
 	}
 };
 
-TEST_F(SimilarityTestFixture, getSimilarityLengthWithExceptionCase)
+TEST_F(SimilarityTestFixture, getSimilarityLengthWithEmptyString)
 {
-	assertIllegalArgument("", "12");
-	assertIllegalArgument("12", "");
+	assertIllegalArgument("", "AB");
+	assertIllegalArgument("AB", "");
 	assertIllegalArgument("", "");
+}
+
+TEST_F(SimilarityTestFixture, getSimilarityLengthWithoutAlphabet)
+{
+	assertIllegalArgument("123", "12");
+	assertIllegalArgument("12", "123");
+	assertIllegalArgument("77", "AB");
 }
 
 TEST_F(SimilarityTestFixture, getSimilarityLength)
