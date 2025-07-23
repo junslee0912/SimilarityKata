@@ -25,14 +25,18 @@ public:
             throw std::invalid_argument("Need more than one letters.");
         }
         
-        for (char ch : str1) {
-            if (!((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))) {
+        for (char ch : str1) 
+        {
+            if (!((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))) 
+            {
                 throw std::invalid_argument("Need Only Alphabets");
             }
         }
 
-        for (char ch : str2) {
-            if (!((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))) {
+        for (char ch : str2) 
+        {
+            if (!((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))) 
+            {
                 throw std::invalid_argument("Need Only Alphabets");
             }
         }
